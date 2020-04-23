@@ -3,7 +3,7 @@ var Promise = require('promise');
 var {google} = require('googleapis');
 var youtube = google.youtube({
    version: 'v3',
-   auth: "AIzaSyBzT6CL3GmgBoHvvSDK8dGgjQT1gFP_rP4"
+   auth: "KEY REMOVED"
 });
 
 exports.handler = (event, context, callback) => {
