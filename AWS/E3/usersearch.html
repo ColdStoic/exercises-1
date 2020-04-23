@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>User Information</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Serverless web application example">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+      table {
+        border-collapse: collapse;
+        /* width: 100%; */
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even){background-color: #f2f2f2}
+
+      th {
+        background-color: #333;
+        color: white;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content-wrap">
+      <div id="nav-placeholder"></div>
+
+      <header>
+        <div class="jumbotron">
+          <h1>User Search</h1>
+          <p>Training - Amazon Web Services (AWS) Cloud Computing Services</p>
+          <p>By Peter Nguyen</p>
+        </div>
+      </header>
+
+      <section>
+        <div>This page retrieves a user's info by email from DB by passing a SOAP message and response.</div>
+        <br>
+        
+        <form id="formSearch" name="formSearch">
+          <div class="form-group col-sm-6" style="float:left;">
+            <label for="inputSearch">User Email</label>
+            <input type="text" class="form-control" id="inputSearch" placeholder="Search a user's email">
+          </div>
+          <button type="submit" class="btn btn-primary col-sm-1" style="margin-top: 25px; float:left;">Search</button>
+        </form>
+      </section>
+      
+      <section style="margin-top:110px; padding-left: 15px">
+        <h4>User Information</h4>
+        <table>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <br>
+        <h4>Soap Message</h4>
+        <pre id="soap-message">...</pre>
+        <br>
+      </section>
+    </div>
+    
+    <footer class="site-footer">
+      <br>
+      bottom text
+      <br>
+    </footer>
+  </div>
+
+  <script src="js/vendor/jquery-3.1.0.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/usersearch.js"></script>
+</body>
+</html>

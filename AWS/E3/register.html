@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Register</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="content-wrap">
+      <div id="nav-placeholder"></div>
+
+      <header>
+        <div class="jumbotron">
+          <h1>Register</h1>
+          <p>Training - Amazon Web Services (AWS) Cloud Computing Services</p>
+          <p>By Peter Nguyen</p>
+        </div>
+      </header>
+          
+      <section>
+        <h1 style="text-align: center;">Register</h1>
+        <form class="form-group" id="formRegister">
+          <label for="inputFirstname">First name</label>
+          <input type="text" class="form-control" id="inputFirstname" placeholder="Enter first name" pattern=".*" required>
+          <br>
+
+          <label for="inputLastname">Last name</label>
+          <input type="text" class="form-control" id="inputLastname" placeholder="Enter last name" pattern=".*" required>
+          <br>
+
+          <label for="inputEmail">Email address</label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" pattern=".*" required>
+          <br>
+
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" id="inputPassword" placeholder="Enter password" pattern=".*" required>
+          <br>
+
+          <label for="inputPassword2">Confirm password</label>
+          <input type="password" class="form-control" id="inputPassword2" placeholder="Enter password again" pattern=".*" required>
+          <br>
+
+          <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <br>
+        bottom text
+      <br>
+    </footer>
+  </div>
+
+  <script src="js/vendor/jquery-3.1.0.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

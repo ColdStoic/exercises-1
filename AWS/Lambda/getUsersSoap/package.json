@@ -1,0 +1,16 @@
+{
+  "name": "getuserssoap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json2xml": "^0.1.3",
+    "lodash": "^4.17.15",
+    "xml2js": "^0.4.23"
+  }
+}

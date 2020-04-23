@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Upload Files</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Serverless web application example">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content-wrap">
+      <div id="nav-placeholder"></div>
+
+      <header>
+        <div class="jumbotron">
+          <h1>Upload Files</h1>
+          <p>Training - Amazon Web Services (AWS) Cloud Computing Services</p>
+          <p>By Peter Nguyen</p>
+        </div>
+      </header>
+
+      <section>
+        <div>Upload files to S3 bucket. (File display and removing has yet to be implemented)</div>
+        <br>
+
+        <form id="formUpload" name="formUpload">
+          <div class="form-group" style="float:left;">
+            <label for="inputItem" style="padding-left: 3px">File</label>
+            <input type="file" class="form-control-file col" style="margin-right: 10px;" id="inputFile" placeholder="Enter item name">
+          </div>
+          <button type="submit" class="btn btn-primary col-sm-1" style="margin-top: 20px; float:left;">Upload</button>
+        </form>
+      </section>
+      
+      <section>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">File Name</th>
+              <th scope="col">Size</th>
+              <th scope="col">Last Modified</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </section>
+    </div>
+    
+    <footer class="site-footer">
+      <br>
+      bottom text
+      <br>
+    </footer>
+  </div>
+
+  <script src="js/vendor/jquery-3.1.0.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/upload.js"></script>
+</body>
+</html>
