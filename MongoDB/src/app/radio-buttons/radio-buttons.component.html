@@ -1,0 +1,31 @@
+<div>
+  <p>
+    <label>
+      Radio Buttons 1: 
+      <label><input type="radio" [formControl]="answer1" name="answer1" value="1">1</label>
+      <label><input type="radio" [formControl]="answer1" name="answer1" value="2">2</label>
+      <label><input type="radio" [formControl]="answer1" name="answer1" value="3">3</label>
+      <label><input type="radio" [formControl]="answer1" name="answer1" value="4">4</label>
+      <label><input type="radio" [formControl]="answer1" name="answer1" value="5">5</label>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Radio Buttons 2:
+      <label><input type="radio" [formControl]="answer2" name="answer2" value="A">A</label>
+      <label><input type="radio" [formControl]="answer2" name="answer2" value="B">B</label> 
+      <label><input type="radio" [formControl]="answer2" name="answer2" value="C">C</label> 
+      <label><input type="radio" [formControl]="answer2" name="answer2" value="D">D</label> 
+      <label><input type="radio" [formControl]="answer2" name="answer2" value="E">E</label> 
+    </label>
+  </p>
+
+  <p>
+      Answers Selected: {{ answer1.value }}, {{ answer2.value }}
+  </p>
+
+  <p>
+    <button (click)="submit()">Submit</button>
+  </p>
+</div>

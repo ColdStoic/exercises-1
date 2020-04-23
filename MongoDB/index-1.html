@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MongoDB - RadioButtons</title>
+    <!-- <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#answerButton").click(function(){
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "http://localhost:3100/radioButtons", true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send(JSON.stringify({
+                    value1: $("input[name='answer1']:checked").val(),
+                    value2: $("input[name='answer2']:checked").val()
+                }));
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>MongoDB Exercise</h1>
+
+    <p>Radio Button 1:</p>
+    <label><input type="radio" name="answer1" value="1">1</label>
+    <label><input type="radio" name="answer1" value="2">2</label>
+    <label><input type="radio" name="answer1" value="3">3</label>
+    <label><input type="radio" name="answer1" value="4">4</label>
+    <label><input type="radio" name="answer1" value="5">5</label>
+
+    <br>  
+
+    <p>Radio Button 2:</p>
+    <label><input type="radio" name="answer2" value="A">A</label>
+    <label><input type="radio" name="answer2" value="B">B</label> 
+    <label><input type="radio" name="answer2" value="C">C</label> 
+    <label><input type="radio" name="answer2" value="D">D</label> 
+    <label><input type="radio" name="answer2" value="E">E</label> 
+    <br><br>
+    <input id="answerButton" type="button" value="Submit">
+</body>
+</html>
