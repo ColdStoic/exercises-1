@@ -1,10 +1,13 @@
+<!-- Main Form Componenet -->
 <div [ngSwitch]="page">
+    <!-- Contact Info -->
     <div *ngSwitchCase="1">
         <p><label>First Name <input type="text" name="firstname" [(ngModel)]="firstname" (ngModelChange)="updateForm($event)" required></label></p>
         <p><label>Last Name <input type="text" name="lastname" [(ngModel)]="lastname" (ngModelChange)="updateForm($event)" required></label></p>
         <p><label>Email <input type="text" name="email" [(ngModel)]="email" (ngModelChange)="updateForm($event)" required></label></p>
     </div>
 
+    <!-- Questions -->
     <div *ngSwitchCase="2">
         <div *ngFor="let question of questions">
             <app-radio-buttons
@@ -16,18 +19,18 @@
         </div>
     </div>
 
+    <!-- Results -->
     <div *ngSwitchCase="3">
         <pre>Answers Selected: {{ submittedAnswers }}</pre>
     </div>
 
+    <!-- Page Controls -->
     <span *ngIf="(page > 1) && (page <= questions.length)">
         <button (click)="previousPage()">Back</button>
     </span>
-
     <span *ngIf="(page >= 1) && (page < questions.length)">
         <button (click)="nextPage()">Next</button>
     </span>
-
     <span *ngIf="page == questions.length">
         <button (click)="submit()">submit</button>
     </span>
