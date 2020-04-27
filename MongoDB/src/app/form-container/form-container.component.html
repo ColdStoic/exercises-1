@@ -1,0 +1,31 @@
+<div [ngSwitch]="page">
+    <div *ngSwitchCase="1">
+        <div *ngFor="let question of questions">
+            <app-radio-buttons
+                [name]="'question' + question.number"
+                [title]="question.title"
+                (answerChosen)="onAnswer(question.number, $event)"
+            >
+            </app-radio-buttons>
+        </div>
+    </div>
+    <div *ngSwitchCase="2">
+        <p>Hello World</p>
+    </div>
+
+    <p>
+        Answers Selected: {{ submittedAnswers }}
+    </p>
+
+    <span *ngIf="(page > 1) && (page <= questions.length)">
+        <button (click)="previousPage()">Back</button>
+    </span>
+
+    <span *ngIf="(page >= 1) && (page < questions.length)">
+        <button (click)="nextPage()">Next</button>
+    </span>
+
+    <span *ngIf="page == questions.length">
+        <button (click)="submit()">submit</button>
+    </span>
+</div>
