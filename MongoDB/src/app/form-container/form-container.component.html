@@ -1,5 +1,11 @@
 <div [ngSwitch]="page">
     <div *ngSwitchCase="1">
+        <p><label>First Name <input type="text" name="firstname" [(ngModel)]="firstname" (ngModelChange)="updateForm($event)" required></label></p>
+        <p><label>Last Name <input type="text" name="lastname" [(ngModel)]="lastname" (ngModelChange)="updateForm($event)" required></label></p>
+        <p><label>Email <input type="text" name="email" [(ngModel)]="email" (ngModelChange)="updateForm($event)" required></label></p>
+    </div>
+
+    <div *ngSwitchCase="2">
         <div *ngFor="let question of questions">
             <app-radio-buttons
                 [name]="'question' + question.number"
@@ -9,13 +15,10 @@
             </app-radio-buttons>
         </div>
     </div>
-    <div *ngSwitchCase="2">
-        <p>Hello World</p>
-    </div>
 
-    <p>
-        Answers Selected: {{ submittedAnswers }}
-    </p>
+    <div *ngSwitchCase="3">
+        <pre>Answers Selected: {{ submittedAnswers }}</pre>
+    </div>
 
     <span *ngIf="(page > 1) && (page <= questions.length)">
         <button (click)="previousPage()">Back</button>

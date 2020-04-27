@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Component({
   selector: 'app-form-container',
   templateUrl: './form-container.component.html',
   styleUrls: ['./form-container.component.css']
 })
-export class FormContainerComponent implements OnInit {
 
-  constructor() { }
+export class FormContainerComponent implements OnInit {
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -31,13 +36,20 @@ export class FormContainerComponent implements OnInit {
   ]
 
   page = 1;
-  answer1 = '';
-
+  firstname = '';
+  lastname = '';
+  email = '';
+  contact = {};
   submittedAnswers = '';
+
+  updateForm(text: string) {
+    this.contact = {firstname: this.firstname, lastname: this.lastname, email: this.email};
+    this.submittedAnswers = JSON.stringify([this.contact, this.questions], undefined, 4);
+  }
 
   onAnswer(number, answerChosen: string) {
     this.questions[(number - 1)].answer = answerChosen;
-    this.submittedAnswers = JSON.stringify(this.questions);
+    this.submittedAnswers = JSON.stringify([this.contact, this.questions], undefined, 4);
   }
 
   nextPage() {
@@ -48,12 +60,7 @@ export class FormContainerComponent implements OnInit {
   }
 
   submit() {
-    let body = JSON.stringify({
-      //value1: this.answer1
-    });
-    //this.http.post('http://localhost:3100/radioButtons', body, httpOptions).subscribe();
-
-    //console.log("Submitted answers: {" + this.answer1 + ", " + this.answer2.value + "} to MongoDB");
-    //alert("Submitted answers: {" + this.answer1.value + ", " + this.answer2.value + "} to MongoDB");
+    this.http.post('http://localhost:3100/radioButtons', this.submittedAnswers, httpOptions).subscribe();
+    console.log("Submitted answers: {" + this.submittedAnswers + "} to MongoDB");
   }
 }
