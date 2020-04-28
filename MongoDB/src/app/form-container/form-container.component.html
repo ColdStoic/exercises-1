@@ -13,6 +13,7 @@
             <app-radio-buttons
                 [name]="'question' + question.number"
                 [title]="question.title"
+                [answer]="question.answer"
                 (answerChosen)="onAnswer(question.number, $event)"
             >
             </app-radio-buttons>

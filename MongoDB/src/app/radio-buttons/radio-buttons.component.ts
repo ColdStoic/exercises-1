@@ -9,14 +9,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class RadioButtonsComponent implements OnInit {
   @Input() name: string;
   @Input() title: string;
+  @Input() answer: string;
   @Output() answerChosen: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
 
-  answer: string = '';
+  //answer: string = this.defaultChoice;
 
   public choose(answer: string) {
       this.answerChosen.emit(answer);

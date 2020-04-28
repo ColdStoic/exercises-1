@@ -20,18 +20,18 @@ export class FormContainerComponent implements OnInit {
   questions = [
     {
       number: 1,
-      title: "Question 1",
-      answer: ''
+      title: "Where do babies come from?",
+      answer: ""
     },
     {
       number: 2,
-      title: "Question 2",
-      answer: ''
+      title: "Why is the speed of light that fast?",
+      answer: ""
     },
     {
       number: 3,
-      title: "Question 3",
-      answer: ''
+      title: "Where do your thoughts come from?",
+      answer: ""
     }
   ]
 
