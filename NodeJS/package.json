@@ -5,7 +5,7 @@
   "main": "1_array_copy.js",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "json2xml": "^0.1.3",
     "lodash": "^4.17.15",
     "node-fetch": "^2.6.0",
